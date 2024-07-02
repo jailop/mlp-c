@@ -9,10 +9,14 @@
 #define M 3
 
 int main(int argc, char **argv) {
+  if (argc < 3) {
+    printf("Usage: %s EPOCHS LEARNING_RATE\n", argv[0]);
+    exit(EXIT_FAILURE);
+  }
   int i;
   int n_nodes[M] = LAYERS;
   int epochs = atoi(argv[1]);
-  int nabla = atof(argv[2]);
+  double nabla = atof(argv[2]);
   neuralnet_t *nn;
   matrix_t *error;
   matrix_t *y_hat;
@@ -29,6 +33,7 @@ int main(int argc, char **argv) {
   neuralnet_fit(nn, X, Y, epochs, nabla);
   y_hat = neuralnet_predict(nn, X);
   error = model_error(Y, y_hat);
+  matrix_print(y_hat);
   matrix_print(error);
   matrix_free(error);
   matrix_free(y_hat);

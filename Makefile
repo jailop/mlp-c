@@ -1,4 +1,4 @@
-CFLAGS = -Wall -g -ansi -pedantic -O3
+CFLAGS = -Wall -g -std=c99 -pedantic -O3
 LDLIBS = -lm -lpthread
 
 all: irisnn winenn mnistnn

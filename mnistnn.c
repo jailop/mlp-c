@@ -25,7 +25,7 @@ uint32_t intread(FILE *fin) {
 matrix_t *load_X_train() {
   uint32_t n;
   unsigned char c[5];
-  unsinged char *d;
+  unsigned char *d;
   uint32_t rows, cols;
   FILE *fin = fopen(TRAIN_ATTRS, "rb");
   if (intread(fin) != 0x803) {
@@ -36,7 +36,6 @@ matrix_t *load_X_train() {
   rows = intread(fin);
   cols = intread(fin);
   d = c;
-   = (unsigned char *) n;
   c[4] = 0;
   printf("%s\n", c);
   printf("%d %d %d\n", n, rows, cols);
