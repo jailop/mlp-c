@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <omp.h>
 #include <pthread.h>
 
 #define matrix_pos(m, row, col) ((row) * (m)->n_cols + col) 
