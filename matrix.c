@@ -205,6 +205,8 @@ matrix_t *matrix_prod(matrix_t *a, matrix_t *b) {
     exit(EXIT_FAILURE);
   }
   m = matrix_new(a->n_rows, b->n_cols, FALSE);
+  #pragma omp target
+  #pragma omp loop
   for (i = 0; i < a->n_rows; i++) 
     for (j = 0; j < b->n_cols; j++)  {
       double value = 0.0;

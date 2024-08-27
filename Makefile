@@ -1,5 +1,5 @@
-CFLAGS = -Wall -g -std=c99 -pedantic -O3
-LDLIBS = -lm -lpthread
+CFLAGS = -Wall -g -fopenmp -std=c11 -pedantic -O3
+LDLIBS = -lm -lpthread 
 
 all: irisnn winenn mnistnn
 
